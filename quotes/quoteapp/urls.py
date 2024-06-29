@@ -11,5 +11,7 @@ urlpatterns = [
     path('detail/<int:quote_id>', views.detail, name='detail'),
     path('delete/<int:quote_id>', views.delete_quote, name='delete'),
     path('author/<int:author_id>', views.author, name='author'),
+    path('my_quotes/', views.my_qoutes, name='my_quotes'),
+    path('edit/<int:quote_id>/', views.edit_quote, name='edit_quote'),    
 
 ]

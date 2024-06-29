@@ -8,6 +8,13 @@ class AuthorForm(ModelForm):
 
     fullname = CharField(min_length=3, max_length=25, required=True, widget=TextInput())
     born_date = DateField(widget=DateInput(attrs={'type': 'date'}), required=True)
+    description = CharField(
+        min_length=0, 
+        max_length=20000, 
+        required=True, 
+        widget=Textarea()
+    )
+    
     
     class Meta:
         model = Author
@@ -24,8 +31,8 @@ class TagForm(ModelForm):
 
 class QuoteForm(ModelForm):
     quote = CharField(
-        min_length=20, 
-        max_length=3000, 
+        min_length=0, 
+        max_length=2000, 
         required=True, 
         widget=Textarea()
     )

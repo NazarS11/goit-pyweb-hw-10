@@ -1,0 +1,21 @@
+{% extends "quoteapp/base.html" %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <p>
+        {{ form.quote.label_tag }}<br>
+        {{ form.quote }}
+    </p>
+    <p>
+        {{ form.author.label_tag }}<br>
+        {{ form.author }}
+    </p>
+    <p>
+        {{ form.tags.label_tag }}<br>
+        {{ form.tags }}
+    </p>
+    <button type="submit">Save changes</button>
+</form>
+
+{% endblock %}
