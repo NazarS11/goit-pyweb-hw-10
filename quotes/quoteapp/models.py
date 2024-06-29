@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # Create your models here.
 class Author(models.Model):
     fullname = models.CharField(max_length=25, null=False, unique=True)
@@ -11,12 +10,17 @@ class Author(models.Model):
     def __str__(self):
         return f"{self.fullname}"
 
-
-class Quote(models.Model):
-    quote = models.CharField(max_length=500, null=False)
-    tags = models.CharField(max_length=500, null=False)
-    author = models.ManyToOneRel(default=False)
-    created = models.DateTimeField(auto_now_add=True)
+class Tag(models.Model):
+    name = models.CharField(max_length=25, null=False, unique=True)
 
     def __str__(self):
         return f"{self.name}"
+
+class Quote(models.Model):
+    quote = models.CharField(max_length=500, null=False)
+    tags = models.ManyToManyField(Tag)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, default=1)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.quote}"

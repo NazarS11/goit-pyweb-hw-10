@@ -1,0 +1,7 @@
+{% extends "quoteapp/base.html" %} {% load extract_tags %} {% block content %}
+
+<p>Quote: <b>{{quote.quote}}</b></p>
+<p>Time of creation: <kbd>{{quote.created}}</kbd></p>
+<p><a href="{% url 'quoteapp:author' author.id %}" role="button" class="outline"><small> {{ quote.author_id }} </small></a></p>
+<p>Tags: <small> {{ quote.tags|tags }} </small></p>
+{% endblock %}
