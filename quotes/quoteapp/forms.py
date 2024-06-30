@@ -1,4 +1,4 @@
-from django.forms import ModelForm, CharField, TextInput, Textarea, DateField, DateInput, Select, ChoiceField, ModelMultipleChoiceField, ModelChoiceField
+from django.forms import ModelForm, CharField, TextInput, Textarea, DateField, DateInput, Select, CheckboxSelectMultiple, ModelMultipleChoiceField, ModelChoiceField, SelectMultiple
 from .models import Quote, Author, Tag
 from django_select2.forms import Select2Widget, Select2MultipleWidget
 
@@ -42,7 +42,12 @@ class QuoteForm(ModelForm):
         widget=Select
     )
 
+    tags = ModelMultipleChoiceField(
+        queryset=Tag.objects.all(),
+        required=False,
+        widget=SelectMultiple(attrs={'class': 'scrollable-select'})
+    )
+
     class Meta:
         model = Quote
-        fields = ['quote', 'author']
-        exclude = ['tags']
+        fields = ['quote', 'author', 'tags']

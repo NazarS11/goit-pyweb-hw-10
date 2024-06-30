@@ -6,25 +6,26 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'quoteapp/style.css' %}"/>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"/>
+    <link rel="stylesheet" href="{% static 'quoteapp/bootstrap.min.css' %}">
 </head>
 <body>
 <main class="container">
     <nav style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px">
         {% if user.is_authenticated %}
         <ul>
-            <li><a href="{% url 'quoteapp:quote' %}" role="button">Add Quote</a></li>
-            <li><a href="{% url 'quoteapp:add_author' %}" role="button">Add Author</a></li>
-            <li><a href="{% url 'quoteapp:tag' %}" role="button">Add Tag</a></li>
-            <li><a href="{% url 'quoteapp:my_quotes' %}" role="button">My Quotes</a></li>            
+            <li><a href="{% url 'quoteapp:quote' %}" role="button" class="btn btn-primary">Add Quote</a></li>
+            <li><a href="{% url 'quoteapp:add_author' %}" role="button" class="btn btn-primary">Add Author</a></li>
+            <li><a href="{% url 'quoteapp:add_tag' %}" role="button" class="btn btn-primary">Add Tag</a></li>
+            <li><a href="{% url 'quoteapp:my_quotes' %}" role="button" class="btn btn-primary">My Quotes</a></li>            
         </ul>
         <ul>
             <li>Welcome <b>{{ user.username }}!</b></li>
-            <li><a href="{% url 'users:logout' %}" role="button">Logout</a></li>
+            <li><a href="{% url 'users:logout' %}" role="button" class="btn btn-primary">Logout</a></li>
         </ul>
         {% else %}
         <ul>
-            <li><a href="{% url 'users:signup' %}" role="button">Sign Up</a></li>
-            <li><a href="{% url 'users:login' %}" role="button">Login</a></li>
+            <li><a href="{% url 'users:signup' %}" role="button" class="btn btn-primary">Sign Up</a></li>
+            <li><a href="{% url 'users:login' %}" role="button" class="btn btn-primary">Login</a></li>
         </ul>
         {% endif %}
     </nav>

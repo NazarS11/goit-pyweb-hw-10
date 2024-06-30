@@ -6,6 +6,51 @@
     color: green;
 }
 
+.scrollable-select {
+    height: 150px;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px; /* Додає відступ між кнопками */
+}
+
+.btn {
+    margin-left: 10px; /* Додає відступ між кнопками і текстом */
+}
+
+
+.messages {
+    list-style-type: none; /* Видалити маркери списку */
+    padding: 0; /* Видалити відступи */
+    text-align: center; /* Центрувати текст */
+}
+.messages li {
+    margin: 10px 0; /* Додати відступи між повідомленнями */
+    padding: 10px; /* Додати внутрішні відступи */
+    border: 1px solid #ccc; /* Додати рамку для стилю */
+    border-radius: 5px; /* Зробити кути округлими */
+}
+.success {
+    background-color: #d4edda; /* Фон для успішного повідомлення */
+    color: #155724; /* Колір тексту для успішного повідомлення */
+}
+.error {
+    background-color: #f8d7da; /* Фон для помилки */
+    color: #721c24; /* Колір тексту для помилки */
+}
+.info {
+    background-color: #d1ecf1; /* Фон для інформаційного повідомлення */
+    color: #0c5460; /* Колір тексту для інформаційного повідомлення */
+}
+.warning {
+    background-color: #fff3cd; /* Фон для попередження */
+    color: #856404; /* Колір тексту для попередження */
+}
+
 /* Custom page CSS */
 body {
     font-family: sans-serif;

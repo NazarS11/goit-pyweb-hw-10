@@ -12,7 +12,10 @@
         {% for tag in quote.tags.all %}
         <a class="tag">{{ tag.name }}</a>
         {% endfor %}
-        <a href="{% url 'quoteapp:delete' quote.id %}" role="button" class="contrast"> Delete quote </a>|<a href="{% url 'quoteapp:edit_quote' quote.id %}" role="button" class="contrast">Edit</a>        
+    </div>
+    <div class="button-container">
+        <a href="{% url 'quoteapp:delete' quote.id %}" role="button" class="btn btn-primary">Delete</a>
+        <a href="{% url 'quoteapp:edit_quote' quote.id %}" role="button" class="btn btn-primary">Edit</a>
     </div>
 </div>
 
